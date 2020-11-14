@@ -1,14 +1,29 @@
 import 'dart:async';
 import 'dart:io';
 import 'package:mqtt_client/mqtt_client.dart';
+import 'package:device_info/device_info.dart';
 
 class MQTTClientWrapper {
   final MqttClient client = MqttClient('broker.hivemq.com', '');
   final String pubTopic = 'Dart/Mqtt_client/elevator_control';
+  String deviceId;
+
+  Future<String> _getId() async {
+    var deviceInfo = DeviceInfoPlugin();
+    if (Platform.isIOS) {
+      // import 'dart:io'
+      var iosDeviceInfo = await deviceInfo.iosInfo;
+      return iosDeviceInfo.identifierForVendor; // unique ID on iOS
+    } else {
+      var androidDeviceInfo = await deviceInfo.androidInfo;
+      return androidDeviceInfo.androidId; // unique ID on Android
+    }
+  }
 
   void prepareMqttClient() async {
+    deviceId = await _getId();
     _setupMqttClient();
-    await _connectClient();
+    await _connectClient(deviceId);
   }
 
   void publishCommand(String message) {
@@ -19,9 +34,9 @@ class MQTTClientWrapper {
     client.disconnect();
   }
 
-  Future<void> _connectClient() async {
+  Future<void> _connectClient(String deviceId) async {
     final MqttConnectMessage connMess = MqttConnectMessage()
-        .withClientIdentifier('Mqtt_MyClientUniqueId')
+        .withClientIdentifier(deviceId)
         .keepAliveFor(60) // Must agree with the keep alive set above or not set
         .withWillTopic(
             'willtopic') // If you set this you must set a will message
@@ -65,11 +80,11 @@ class MQTTClientWrapper {
 
     /// Subscribe to it
     print('Subscribing to the topic');
-    client.subscribe(pubTopic, MqttQos.atMostOnce);
+    client.subscribe(pubTopic, MqttQos.exactlyOnce);
 
     /// Publish it
-    print('Publishing our topic');
-    client.publishMessage(pubTopic, MqttQos.atMostOnce, builder.payload);
+    print('Publishing our topic : ' + message);
+    client.publishMessage(pubTopic, MqttQos.exactlyOnce, builder.payload);
   }
 
   void _onSubscribed(String topic) {
