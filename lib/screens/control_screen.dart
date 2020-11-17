@@ -8,7 +8,6 @@ import 'package:touchless_elevator/components/icon_content2.dart';
 import 'package:touchless_elevator/components/icon_content3.dart';
 import 'package:touchless_elevator/constants.dart';
 import 'package:touchless_elevator/app_brain/controller.dart';
-import 'package:touchless_elevator/screens/scanner_screen.dart';
 
 enum Option {
   up,
@@ -42,38 +41,17 @@ class _ControlPageState extends State<ControlPage> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
-            Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: <Widget>[
-                Align(
-                  alignment: Alignment.topLeft,
-                  child: FlatButton(
-                    onPressed: () {
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (context) {
-                        return Scanner();
-                      }));
-                    },
-                    child: Icon(
-                      Icons.arrow_back_ios,
-                      size: 30.0,
-                    ),
-                  ),
+            Align(
+              alignment: Alignment.topRight,
+              child: FlatButton(
+                onPressed: () {
+                  widget.elevator.exitElevator();
+                },
+                child: Icon(
+                  Icons.close,
+                  size: 40.0,
                 ),
-                Align(
-                  alignment: Alignment.topRight,
-                  child: FlatButton(
-                    onPressed: () {
-                      widget.elevator.exitElevator();
-                    },
-                    child: Icon(
-                      Icons.close,
-                      size: 40.0,
-                    ),
-                  ),
-                ),
-              ],
+              ),
             ),
             Expanded(
               flex: 7,

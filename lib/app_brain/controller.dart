@@ -7,7 +7,7 @@ const elevatorAccesId = '12345';
 class ElevatorController {
   ElevatorController(this.elevatorClient, this.enteredFloor);
   final MQTTClientWrapper elevatorClient;
-  final String enteredFloor;
+  String enteredFloor;
 
   void goUpward() {
     elevatorClient.publishCommand('go=UP&currentFloor=${this.enteredFloor}');
@@ -27,6 +27,7 @@ class ElevatorController {
 
   void selectFloor(int floorNumber) {
     elevatorClient.publishCommand('floor=$floorNumber');
+    this.enteredFloor = floorNumber.toString();
   }
 
   void onAlarm() {
