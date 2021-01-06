@@ -1,4 +1,4 @@
-## **Touchless_Elevator**
+## **IOT Based Touchless_Elevator**
 Android Application created for SLIoT Competition 2020.
 
 An application for the passengers using elevators, designed to avoid touching the virus contaminated surfaces on elevator buttons that the issue risen up  with COVID pandemic. A Flutter application that is integrated with a qr code scanner for the authentication and using MQTT protocol for the communication with elevator controlling.
