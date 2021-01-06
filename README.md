@@ -1,5 +1,6 @@
 # Touchless_Elevator
-Application in SLIoT
+Android Application created for SLIoT Competition 2020.
+
 
 
 
