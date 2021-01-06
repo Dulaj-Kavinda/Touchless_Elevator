@@ -3,4 +3,4 @@ Application in SLIoT
 
 
 
-![caption](https://github.com/DulajKavinda98/Touchless_Elevator/blob/master/Captures/IOT_Elevator_App.mp4)
+![caption](https://media.giphy.com/media/8JQ7pr7wzOFVH0XIrp/giphy.gif)
