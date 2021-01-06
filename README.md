@@ -6,12 +6,5 @@ An application for the passengers using elevators, designed to avoid touching th
 
 ![caption](https://media.giphy.com/media/8JQ7pr7wzOFVH0XIrp/giphy.gif)
 
-**Process**
-
-![process](https://github.com/DulajKavinda98/Touchless_Elevator/blob/master/Captures/process_sliot.jpg)
-
-
-
-
 
 
