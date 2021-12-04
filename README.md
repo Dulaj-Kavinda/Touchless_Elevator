@@ -7,6 +7,7 @@ An application for the passengers using elevators, designed to avoid touching th
 
 <img align="left" alt="start-screeen" width="400px"  src="captures/img1e.png" />
 <img align="left" alt="control-screeen" width="400px"  src="captures/img2e.png" />
-<>
-<img src="https://media.giphy.com/media/8JQ7pr7wzOFVH0XIrp/giphy.gif" width="576" height="360" />
+
+<br /><br /><br />
+<img align="center" alt="process" src="https://media.giphy.com/media/8JQ7pr7wzOFVH0XIrp/giphy.gif" width="576" height="360" />
 
