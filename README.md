@@ -10,5 +10,6 @@ An application for the passengers using elevators, designed to avoid touching th
 <p/>
 
 ### How it works⚙️
-<img align="left" raw=false alt="process" src="https://media.giphy.com/media/8JQ7pr7wzOFVH0XIrp/giphy.gif" width="700" height="400" />
+[![Touchless Elevator Project Video](http://img.youtube.com/vi/f_VLpxe9CUQ/0.jpg)](https://youtu.be/f_VLpxe9CUQ)
+
 
